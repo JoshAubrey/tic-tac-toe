@@ -3,7 +3,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100%; */
-    font-family: Palantino, sans-serif;
+    font-family: Indie Flower, sans-serif;
     
 }
 
@@ -17,7 +17,21 @@ body {
 }
 
 #title {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+}
+
+#message {
+    width: 400px;
+    height: 50px;
+    display: block;
+    margin:0 auto;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.winner {
+    color: #1DF915;
 }
 
 #container {
@@ -32,23 +46,41 @@ body {
     box-shadow: 5px 5px 10px black; */
 }
 
-table {
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-
-th, td {
-    font-size: 20px;
-    font-weight: normal;
-    padding: 12px 20px;
-    width: 20%;
+#board {
+    margin:0 auto;
+    width: 450px;
+    display: grid;
     text-align: center;
-    border-bottom: 1px solid #E1E1E1;
+    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(3, 150px);
 }
 
-.hide {
-    display: none;
+.cell {
+    font-family: Indie Flower, sans-serif;
+    font-size: 150px;
+    line-height: 150px;
+}
+
+[id='0'], [id='3'], [id='6'] {
+    border-right:2px solid black;
+}
+[id='2'], [id='5'], [id='8'] {
+    border-left:2px solid black;
+}
+[id='3'], [id='4'], [id='5'] {
+    border-top:2px solid black;
+}
+[id='6'], [id='7'], [id='8'] {
+    border-top:2px solid black;
+}
+
+.cell:hover, .cell:active {
+    /* border: 1px solid #c6c6c6; */
+    outline:none;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    background-color: grey;
+    color: white;
+    transition: 0.5s;
 }
 
 input{
