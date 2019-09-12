@@ -15,19 +15,36 @@ body {
     color: black;
     font-weight: normal;
 }
+h1 {
+    font-size: 40px;
+}
+
+small {
+    font-size: 20px;
+}
 
 #title {
     margin-bottom: 50px;
 }
 
-#message {
+#controls {
     width: 400px;
     height: 50px;
     display: block;
     margin:0 auto;
     font-size: 30px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+#message {
+    width: auto;
+    height: 50px;
+    display: block;
+    margin:0 auto;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 
 }
 .winner {
@@ -116,13 +133,177 @@ button:hover, button:active {
     outline: none;
 } */
 
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    background-color: #21f380;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
 
 
 @media screen and (max-width: 1000px) {
 
+    #container {
+        width: 100vw;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+    
+    small {
+        font-size: 2em;
+    }
+    
+    #title {
+        margin-bottom: 4em;
+    }
+    #controls {
+        font-size: 4em;
+        height: 1em;
+        margin-bottom: 1em;
+    }
+    #message {
+        font-size: 4em;
+        height: 1em;
+        margin-bottom: 1em;
+    }
+    #board {
+        width: 75vw;
+        grid-template-rows: repeat(3, 25vmin);
+        grid-template-columns: repeat(3, 25vmin);
+    }
+    .cell {
+        font-size: 25vmin;
+        line-height: 25vmin;
+    }
+    
     * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+    .switch {
+        width: 2em;
+        height: 1em;
+    }
+    
+    .slider:before {
+        height: .8em;
+        width: .8em;
+        left: .1em;
+        bottom: .1em;
+    }
+    
+    input:checked + .slider:before {
+        -webkit-transform: translateX(1em);
+        -ms-transform: translateX(1em);
+        transform: translateX(1em);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 1em;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
 }
 @media screen and (max-width: 1000px) and (orientation: landscape) {
+
+    #container {
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+    
+    small {
+        font-size: 1em;
+    }
+    
+    #title {
+        margin-bottom: 1em;
+    }
+    #title {
+        display: none; 
+    }
+
+    #controls {
+        padding-top: .5em;
+        font-size: 2em;
+        height: 1em;
+        margin-bottom: .5em;
+    }
+    #message {
+        font-size: 2em;
+        height: 1em;
+        margin-bottom: .5em;
+    }
+    #board {
+        width: 75vh;
+        grid-template-rows: repeat(3, 25vmin);
+        grid-template-columns: repeat(3, 25vmin);
+    }
  
 }
 
